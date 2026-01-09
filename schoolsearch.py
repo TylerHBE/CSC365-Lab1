@@ -17,6 +17,7 @@ f_name = 'students.txt'
 def main():
     query_lname("STERBACK")
     query_lname_bus("STERBACK")
+    query_teacher("HAMER")
 
 def search(entryPosition, entry):
     indices = []
@@ -67,6 +68,17 @@ def query_lname_bus(last_name):
         if len(indices) > 1:
             s += return_entry(index, s_first_name) + " "
         s += last_name + ": Bus(" + return_entry(index, bus) + ")"
+        results.append(s)
+    for result in results:
+        print(result)
+
+# Search queries
+def query_teacher(t_last_name):
+    indices = search(t_last_name, t_last_name)
+    results = []
+    for index in indices:
+        s = "  "
+        s += return_entry(index, s_first_name) + " " + return_entry(index, s_last_name)
         results.append(s)
     for result in results:
         print(result)
