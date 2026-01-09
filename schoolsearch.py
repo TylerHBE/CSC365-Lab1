@@ -65,7 +65,8 @@ def query_lname(last_name):
             s += return_entry(index, s_first_name) + " "
         s += last_name + ": Grade(" + return_entry(index, grade) + ") Classroom(" + return_entry(index, classroom) + ") Teacher(" + return_entry(index, t_first_name) + " " + return_entry(index, t_last_name) + ")"
         results.append(s)
-    print(results)
+    for result in results:
+        print(result)
 
 #main entry point
 main()
