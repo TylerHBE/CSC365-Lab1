@@ -1,6 +1,7 @@
 # Default parameters
 
 # Column indices
+# file format: StLastName, StFirstName, Grade, Classroom, Bus, GPA, TLastName, TFirstName
 s_last_name = 0
 s_first_name = 1
 grade = 2
@@ -14,9 +15,8 @@ t_first_name = 7
 f_name = 'students.txt'
 
 def main():
-    print(search(s_last_name, "STERBACK"))
+    print(return_line(search(s_last_name, "STERBACK")))
 
-# file format: StLastName, StFirstName, Grade, Classroom, Bus, GPA, TLastName, TFirstName
 def search(entryPosition, entry):
     l_index = 0
     with open(f_name, 'r') as file:
@@ -27,6 +27,14 @@ def search(entryPosition, entry):
                 return l_index
             l_index += 1
     return -1
+
+def return_line(line):
+    with open(f_name, 'r') as file:
+        lines = file.readlines()
+        if 0 <= line < len(lines):
+            return lines[line].strip().split(',')
+        else:
+            return None
 
 #main entry point
 main();
