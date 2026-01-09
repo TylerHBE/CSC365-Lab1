@@ -73,8 +73,8 @@ def query_lname_bus(last_name):
         print(result)
 
 # Search queries
-def query_teacher(t_last_name):
-    indices = search(t_last_name, t_last_name)
+def query_teacher(t_lname):
+    indices = search(t_last_name, t_lname)
     results = []
     for index in indices:
         s = "  "
