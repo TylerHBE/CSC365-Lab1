@@ -15,10 +15,12 @@ t_first_name = 7
 f_name = 'students.txt'
 
 def main():
-    query_lname("STERBACK")
-    query_lname_bus("STERBACK")
-    query_teacher("HAMER")
-    query_bus("52")
+    #query_lname("STERBACK")
+    #query_lname_bus("STERBACK")
+    #query_teacher("HAMER")
+    #query_bus("52")
+    query_grade("3")
+    query_grade_averageGPA("3")
 
 def search(entryPosition, entry):
     indices = []
@@ -91,6 +93,25 @@ def query_bus(bus_route):
         results.append(s)
     for result in results:
         print(result)
+
+def query_grade(grade_level):
+    indices = search(grade, grade_level)
+    results = []
+    for index in indices:
+        s = "  "
+        s += return_entry(index, s_first_name) + " " + return_entry(index, s_last_name)
+        results.append(s)
+    for result in results:
+        print(result)
+
+def query_grade_averageGPA(grade_level):
+    indices = search(grade, grade_level)
+    result = 0
+    for index in indices:
+        result += float(return_entry(index, gpa))
+    if len(indices) > 0:
+        average = result / len(indices)
+        print("  Grade " + grade_level + " Average GPA: " + "{:.2f}".format(average))
 
 #main entry point
 main()
