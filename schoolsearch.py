@@ -18,24 +18,13 @@ def main():
     query_lname("STERBACK")
 
 def search(entryPosition, entry):
-    l_index = 0
-    with open(f_name, 'r') as file:
-        for line in file:
-            # Process each line here
-            l = line.strip().split(',') # Split by comma and remove whitespace
-            if l[entryPosition] == entry:
-                return l_index
-            l_index += 1
-    return -1
-
-def search_lname(entry):
     indices = []
     l_index = 0
     with open(f_name, 'r') as file:
         for line in file:
             # Process each line here
             l = line.strip().split(',') # Split by comma and remove whitespace
-            if l[s_last_name] == entry:
+            if l[entryPosition] == entry:
                 indices.append(l_index)
             l_index += 1
     return indices
@@ -57,7 +46,7 @@ def return_entry(line, entryPosition):
     
 # Search queries
 def query_lname(last_name):
-    indices = search_lname(last_name)
+    indices = search(s_last_name, last_name)
     results = []
     for index in indices:
         s = "  "
