@@ -119,9 +119,9 @@ def query_grade_highestGPA(grade_level):
     max = 0
     max_index = -1
     for index in indices:
-        gpa = float(return_entry(index, gpa))
-        if gpa > max:
-            max = gpa
+        s_gpa = float(return_entry(index, gpa))
+        if s_gpa > max:
+            max = s_gpa
             max_index = index
     if max_index > 0:
         print("  Grade " + grade_level + " Highest GPA: " + return_entry(max_index, s_first_name) + " " + return_entry(max_index, s_last_name) + " ({:.2f})".format(max))
