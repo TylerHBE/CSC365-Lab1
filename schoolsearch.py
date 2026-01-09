@@ -18,6 +18,7 @@ def main():
     query_lname("STERBACK")
     query_lname_bus("STERBACK")
     query_teacher("HAMER")
+    query_bus("52")
 
 def search(entryPosition, entry):
     indices = []
@@ -59,7 +60,6 @@ def query_lname(last_name):
     for result in results:
         print(result)
 
-# Search queries
 def query_lname_bus(last_name):
     indices = search(s_last_name, last_name)
     results = []
@@ -72,9 +72,18 @@ def query_lname_bus(last_name):
     for result in results:
         print(result)
 
-# Search queries
 def query_teacher(t_lname):
     indices = search(t_last_name, t_lname)
+    results = []
+    for index in indices:
+        s = "  "
+        s += return_entry(index, s_first_name) + " " + return_entry(index, s_last_name)
+        results.append(s)
+    for result in results:
+        print(result)
+
+def query_bus(bus_route):
+    indices = search(bus, bus_route)
     results = []
     for index in indices:
         s = "  "
