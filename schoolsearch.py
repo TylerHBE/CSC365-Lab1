@@ -15,7 +15,7 @@ t_first_name = 7
 f_name = 'students.txt'
 
 def main():
-    print(return_line(search(s_last_name, "STERBACK")))
+    query_lname("STERBACK")
 
 def search(entryPosition, entry):
     l_index = 0
@@ -28,6 +28,18 @@ def search(entryPosition, entry):
             l_index += 1
     return -1
 
+def search_lname(entry):
+    indices = []
+    l_index = 0
+    with open(f_name, 'r') as file:
+        for line in file:
+            # Process each line here
+            l = line.strip().split(',') # Split by comma and remove whitespace
+            if l[s_last_name] == entry:
+                indices.append(l_index)
+            l_index += 1
+    return indices
+
 def return_line(line):
     with open(f_name, 'r') as file:
         lines = file.readlines()
@@ -35,6 +47,25 @@ def return_line(line):
             return lines[line].strip().split(',')
         else:
             return None
+        
+def return_entry(line, entryPosition):
+    l = return_line(line)
+    if l is not None:
+        return l[entryPosition]
+    else:
+        return None
+    
+# Search queries
+def query_lname(last_name):
+    indices = search_lname(last_name)
+    results = []
+    for index in indices:
+        s = "  "
+        if len(indices) > 1:
+            s += return_entry(index, s_first_name) + " "
+        s += last_name + ": Grade(" + return_entry(index, grade) + ") Classroom(" + return_entry(index, classroom) + ") Teacher(" + return_entry(index, t_first_name) + " " + return_entry(index, t_last_name) + ")"
+        results.append(s)
+    print(results)
 
 #main entry point
-main();
+main()
