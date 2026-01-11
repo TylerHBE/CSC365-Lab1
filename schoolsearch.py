@@ -19,11 +19,14 @@ def main():
     # app params
     continue_l = True
 
+    print("School Search Application")
     prompt()
+
     while continue_l:
-        # uncomment desired query to run    
+        
         input_u = input("Press Enter to run queries or type 'q' to quit: ")
         input_u = input_u.lower().split(' ')
+
         if input_u[0] == 'q':
             continue_l = False
             break
@@ -76,7 +79,14 @@ def main():
             continue
 
 def prompt():
-    print("School Search")
+    print("Available commands:")
+    print("• S[tudent]: <lastname> [B[us]]")
+    print("• T[eacher]: <lastname>")
+    print("• B[us]: <number>")
+    print("• G[rade]: <number> [H[igh]|L[ow]]")
+    print("• A[verage]: <number>")
+    print("• I[nfo]")
+    print("• Q[uit]")
 
 def search(entryPosition, entry):
     indices = []
