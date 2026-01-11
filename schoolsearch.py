@@ -27,6 +27,8 @@ def main():
         input_u = input("Press Enter to run queries or type 'q' to quit: ")
         input_u = input_u.split(' ')
         input_u[0] = input_u[0].lower()
+        if len(input_u) >= 3:
+            input_u[2] = input_u[2].lower()
 
         if input_u[0] == 'q':
             continue_l = False
