@@ -14,14 +14,68 @@ t_first_name = 7
 # file params
 f_name = 'students.txt'
 
+# app params
+continue_l = True
+
 def main():
-    #query_lname("STERBACK")
-    #query_lname_bus("STERBACK")
-    #query_teacher("HAMER")
-    #query_bus("52")
-    query_grade("3")
-    query_grade_averageGPA("3")
-    query_grade_highestGPA("3")
+    prompt()
+    while continue_l:
+        # uncomment desired query to run    
+        input_u = input("Press Enter to run queries or type 'q' to quit: ")
+        input_u = input_u.lower().split(' ')
+        if input_u[0] == 'q':
+            continue_l = False
+            break
+        elif input_u[0] == 's':
+            if len(input_u) >= 3 and input_u[2] == 'b':
+                query_lname_bus(input_u[1])
+            else:
+                if len(input_u) < 2:
+                    print("Invalid input")
+                    continue
+                else:
+                    query_lname(input_u[1])
+        elif input_u[0] == 't':
+            if len(input_u) < 2:
+                    print("Invalid input")
+                    continue
+            else:
+                query_teacher(input_u[1])
+        elif input_u[0] == 'b':
+            if len(input_u) < 2:
+                    print("Invalid input")
+                    continue
+            else:
+                query_bus(input_u[1])
+        elif input_u[0] == 'g':
+            if len(input_u) >= 3:
+                if input_u[2] == 'h':
+                    query_grade_highestGPA(input_u[1])
+                elif input_u[2] == 'l':
+                    query_grade_lowestGPA(input_u[1])
+                else:
+                    print("Invalid input")
+                    continue
+            else:
+                if len(input_u) < 2:
+                    print("Invalid input")
+                    continue
+                else:
+                    query_grade(input_u[1])
+        elif input_u[0] == 'a':
+            if len(input_u) < 2:
+                    print("Invalid input")
+                    continue
+            else:
+                query_grade_averageGPA(input_u[1])
+        elif input_u[0] == 'i':
+            prompt()
+        else:
+            print("Invalid input")
+            continue
+
+def prompt():
+    print("School Search")
 
 def search(entryPosition, entry):
     indices = []
@@ -125,6 +179,18 @@ def query_grade_highestGPA(grade_level):
             max_index = index
     if max_index > 0:
         print("  Grade " + grade_level + " Highest GPA: " + return_entry(max_index, s_first_name) + " " + return_entry(max_index, s_last_name) + " ({:.2f})".format(max))
+
+def query_grade_lowestGPA(grade_level):
+    indices = search(grade, grade_level)
+    min = 1000.0
+    min_index = -1
+    for index in indices:
+        s_gpa = float(return_entry(index, gpa))
+        if s_gpa < min:
+            min = s_gpa
+            min_index = index
+    if min_index > 0:
+        print("  Grade " + grade_level + " Lowest GPA: " + return_entry(min_index, s_first_name) + " " + return_entry(min_index, s_last_name) + " ({:.2f})".format(min))
 
 #main entry point
 main()
