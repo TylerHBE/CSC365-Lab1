@@ -25,7 +25,8 @@ def main():
     while continue_l:
 
         input_u = input("Press Enter to run queries or type 'q' to quit: ")
-        input_u = input_u.lower().split(' ')
+        input_u = input_u.split(' ')
+        input_u[0] = input_u[0].lower()
 
         if input_u[0] == 'q':
             continue_l = False
@@ -97,7 +98,7 @@ def search(entryPosition, entry):
         for line in file:
             # Process each line here
             l = line.strip().split(',') # Split by comma and remove whitespace
-            if l[entryPosition] == entry:
+            if l[entryPosition].lower() == entry.lower():
                 indices.append(l_index)
             l_index += 1
     return indices
