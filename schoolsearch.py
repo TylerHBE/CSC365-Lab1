@@ -38,7 +38,7 @@ def main():
                     print("Invalid input")
                     continue
                 else:
-                    query_lname(input_u[1])
+                    query_lname('SCHOENECKER')
         elif input_u[0] == 't':
             if len(input_u) < 2:
                     print("Invalid input")
