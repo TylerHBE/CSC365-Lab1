@@ -14,10 +14,11 @@ t_first_name = 7
 # file params
 f_name = 'students.txt'
 
-# app params
-continue_l = True
-
 def main():
+
+    # app params
+    continue_l = True
+
     prompt()
     while continue_l:
         # uncomment desired query to run    
