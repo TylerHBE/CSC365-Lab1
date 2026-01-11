@@ -122,8 +122,6 @@ def return_entry(line, entryPosition):
     
 # Search queries
 def query_lname(last_name):
-    print("Searching for last name: " + last_name)
-
     indices = search(s_last_name, last_name)
     results = []
     for index in indices:
@@ -136,8 +134,6 @@ def query_lname(last_name):
         print(result)
 
 def query_lname_bus(last_name):
-    print("Searching for last name: " + last_name)
-
     indices = search(s_last_name, last_name)
     results = []
     for index in indices:
@@ -150,8 +146,6 @@ def query_lname_bus(last_name):
         print(result)
 
 def query_teacher(t_lname):
-    print("Searching for last name: " + t_lname)
-
     indices = search(t_last_name, t_lname)
     results = []
     for index in indices:
