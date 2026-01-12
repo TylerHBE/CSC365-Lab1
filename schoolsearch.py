@@ -140,7 +140,7 @@ def query_lname(last_name):
     results = []
     for index in indices:
         s = "  "
-        s += last_name + " " + return_entry(index, s_first_name) + ": Grade(" + return_entry(index, grade) + ") Classroom(" + return_entry(index, classroom) + ") Teacher(" + return_entry(index, t_last_name) + " " + return_entry(index, t_first_name) + ")"
+        s += return_entry(index, s_last_name) + " " + return_entry(index, s_first_name) + ": Grade(" + return_entry(index, grade) + ") Classroom(" + return_entry(index, classroom) + ") Teacher(" + return_entry(index, t_last_name) + " " + return_entry(index, t_first_name) + ")"
         results.append(s)
     for result in results:
         print(result)
@@ -150,7 +150,7 @@ def query_lname_bus(last_name):
     results = []
     for index in indices:
         s = "  "
-        s += last_name + " " + return_entry(index, s_first_name) + ": Bus(" + return_entry(index, bus) + ")"
+        s += return_entry(index, s_last_name) + " " + return_entry(index, s_first_name) + ": Bus(" + return_entry(index, bus) + ")"
         results.append(s)
     for result in results:
         print(result)
