@@ -190,7 +190,7 @@ def query_grade_highestGPA(grade_level):
             max = s_gpa
             max_index = index
     if max_index > 0:
-        s = return_entry(max_index, s_last_name) + " " + return_entry(max_index, s_first_name) + ": GPA(" + return_entry(max_index, gpa) + ") Teacher(" + return_entry(max_index, t_last_name) + " " + return_entry(max_index, t_first_name) + ") Bus(" + return_entry(max_index, bus) + ")"
+        s = "  " + return_entry(max_index, s_last_name) + " " + return_entry(max_index, s_first_name) + ": GPA(" + return_entry(max_index, gpa) + ") Teacher(" + return_entry(max_index, t_last_name) + " " + return_entry(max_index, t_first_name) + ") Bus(" + return_entry(max_index, bus) + ")"
         print(s)
 
 def query_grade_lowestGPA(grade_level):
@@ -203,7 +203,7 @@ def query_grade_lowestGPA(grade_level):
             min = s_gpa
             min_index = index
     if min_index > 0:
-        s = return_entry(min_index, s_last_name) + " " + return_entry(min_index, s_first_name) + ": GPA(" + return_entry(min_index, gpa) + ") Teacher(" + return_entry(min_index, t_last_name) + " " + return_entry(min_index, t_first_name) + ") Bus(" + return_entry(min_index, bus) + ")"
+        s = "  " + return_entry(min_index, s_last_name) + " " + return_entry(min_index, s_first_name) + ": GPA(" + return_entry(min_index, gpa) + ") Teacher(" + return_entry(min_index, t_last_name) + " " + return_entry(min_index, t_first_name) + ") Bus(" + return_entry(min_index, bus) + ")"
         print(s)
     
 #main entry point
