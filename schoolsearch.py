@@ -126,9 +126,7 @@ def query_lname(last_name):
     results = []
     for index in indices:
         s = "  "
-        if len(indices) > 1:
-            s += return_entry(index, s_first_name) + " "
-        s += last_name + ": Grade(" + return_entry(index, grade) + ") Classroom(" + return_entry(index, classroom) + ") Teacher(" + return_entry(index, t_first_name) + " " + return_entry(index, t_last_name) + ")"
+        s += last_name + " " + return_entry(index, s_first_name) + ": Grade(" + return_entry(index, grade) + ") Classroom(" + return_entry(index, classroom) + ") Teacher(" + return_entry(index, t_last_name) + " " + return_entry(index, t_first_name) + ")"
         results.append(s)
     for result in results:
         print(result)
@@ -138,9 +136,7 @@ def query_lname_bus(last_name):
     results = []
     for index in indices:
         s = "  "
-        if len(indices) > 1:
-            s += return_entry(index, s_first_name) + " "
-        s += last_name + ": Bus(" + return_entry(index, bus) + ")"
+        s += last_name + " " + return_entry(index, s_first_name) + ": Bus(" + return_entry(index, bus) + ")"
         results.append(s)
     for result in results:
         print(result)
@@ -150,7 +146,7 @@ def query_teacher(t_lname):
     results = []
     for index in indices:
         s = "  "
-        s += return_entry(index, s_first_name) + " " + return_entry(index, s_last_name)
+        s += return_entry(index, s_last_name) + " " + return_entry(index, s_first_name)
         results.append(s)
     for result in results:
         print(result)
@@ -160,7 +156,7 @@ def query_bus(bus_route):
     results = []
     for index in indices:
         s = "  "
-        s += return_entry(index, s_first_name) + " " + return_entry(index, s_last_name)
+        s += return_entry(index, s_last_name) + " " + return_entry(index, s_first_name) + ": Grade(" + return_entry(index, grade) + ") Classroom(" + return_entry(index, classroom) + ")"
         results.append(s)
     for result in results:
         print(result)
@@ -170,7 +166,7 @@ def query_grade(grade_level):
     results = []
     for index in indices:
         s = "  "
-        s += return_entry(index, s_first_name) + " " + return_entry(index, s_last_name)
+        s += return_entry(index, s_last_name) + " " + return_entry(index, s_first_name) + ": GPA(" + return_entry(index, gpa) + ") Teacher(" + return_entry(index, t_last_name) + " " + return_entry(index, t_first_name) + ") Bus(" + return_entry(index, bus) + ")"
         results.append(s)
     for result in results:
         print(result)
@@ -194,7 +190,8 @@ def query_grade_highestGPA(grade_level):
             max = s_gpa
             max_index = index
     if max_index > 0:
-        print("  Grade " + grade_level + " Highest GPA: " + return_entry(max_index, s_first_name) + " " + return_entry(max_index, s_last_name) + " ({:.2f})".format(max))
+        s = return_entry(max_index, s_last_name) + " " + return_entry(max_index, s_first_name) + ": GPA(" + return_entry(max_index, gpa) + ") Teacher(" + return_entry(max_index, t_last_name) + " " + return_entry(max_index, t_first_name) + ") Bus(" + return_entry(max_index, bus) + ")"
+        print(s)
 
 def query_grade_lowestGPA(grade_level):
     indices = search(grade, grade_level)
@@ -206,7 +203,8 @@ def query_grade_lowestGPA(grade_level):
             min = s_gpa
             min_index = index
     if min_index > 0:
-        print("  Grade " + grade_level + " Lowest GPA: " + return_entry(min_index, s_first_name) + " " + return_entry(min_index, s_last_name) + " ({:.2f})".format(min))
-
+        s = return_entry(min_index, s_last_name) + " " + return_entry(min_index, s_first_name) + ": GPA(" + return_entry(min_index, gpa) + ") Teacher(" + return_entry(min_index, t_last_name) + " " + return_entry(min_index, t_first_name) + ") Bus(" + return_entry(min_index, bus) + ")"
+        print(s)
+    
 #main entry point
 main()
