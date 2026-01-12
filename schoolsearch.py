@@ -1,4 +1,5 @@
 # Default parameters
+import sys
 
 # Column indices
 # file format: StLastName, StFirstName, Grade, Classroom, Bus, GPA, TLastName, TFirstName
@@ -96,22 +97,35 @@ def prompt():
 def search(entryPosition, entry):
     indices = []
     l_index = 0
-    with open(f_name, 'r') as file:
-        for line in file:
-            # Process each line here
-            l = line.strip().split(',') # Split by comma and remove whitespace
-            if l[entryPosition].lower() == entry.lower():
-                indices.append(l_index)
-            l_index += 1
+
+    try:
+        with open(f_name, 'r') as file:
+            for line in file:
+                l = line.strip().split(',')
+                if entryPosition < len(l) and l[entryPosition].lower() == entry.lower():
+                    indices.append(l_index)
+                l_index += 1
+    except FileNotFoundError:
+        print(f"Error: file '{f_name}' not found.")
+        sys.exit(1)
+    except OSError as e:
+        print(f"I/O error while reading '{f_name}': {e}")
+        sys.exit(1)
+
     return indices
 
 def return_line(line):
-    with open(f_name, 'r') as file:
-        lines = file.readlines()
-        if 0 <= line < len(lines):
-            return lines[line].strip().split(',')
-        else:
-            return None
+    try:
+        with open(f_name, 'r') as file:
+            lines = file.readlines()
+    except FileNotFoundError:
+        print(f"Error: file '{f_name}' not found.")
+        sys.exit(1)   # non-zero exit code indicates failure
+
+    if 0 <= line < len(lines):
+        return lines[line].strip().split(',')
+    return None
+
         
 def return_entry(line, entryPosition):
     l = return_line(line)
