@@ -207,8 +207,8 @@ def query_grade_lowestGPA(grade_level):
         print(s)
 
 def query_info():
-    for i in range(7):
-        grade_level = str(i)
+    for i in range(6):
+        grade_level = str(i+1)
         indices = search(grade, grade_level)
         print(f"  Grade {grade_level}: {len(indices)} students")
 
