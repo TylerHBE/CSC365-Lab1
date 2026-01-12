@@ -31,11 +31,11 @@ def main():
         if len(input_u) >= 3:
             input_u[2] = input_u[2].lower()
 
-        if input_u[0] == 'q':
+        if input_u[0] == 'q' or input_u[0] == 'quit':
             continue_l = False
             break
-        elif input_u[0] == 's':
-            if len(input_u) >= 3 and input_u[2] == 'b':
+        elif input_u[0] == 's' or input_u[0] == 'student':
+            if len(input_u) >= 3 and (input_u[2] == 'b'  or input_u[0] == 'bus'):
                 query_lname_bus(input_u[1])
             else:
                 if len(input_u) < 2:
@@ -43,23 +43,23 @@ def main():
                     continue
                 else:
                     query_lname(input_u[1])
-        elif input_u[0] == 't':
+        elif input_u[0] == 't' or input_u[0] == 'teacher':
             if len(input_u) < 2:
                     print("Invalid input")
                     continue
             else:
                 query_teacher(input_u[1])
-        elif input_u[0] == 'b':
+        elif input_u[0] == 'b' or input_u[0] == 'bus':
             if len(input_u) < 2:
                     print("Invalid input")
                     continue
             else:
                 query_bus(input_u[1])
-        elif input_u[0] == 'g':
+        elif input_u[0] == 'g' or input_u[0] == 'grade':
             if len(input_u) >= 3:
-                if input_u[2] == 'h':
+                if input_u[2] == 'h' or input_u[2] == 'high':
                     query_grade_highestGPA(input_u[1])
-                elif input_u[2] == 'l':
+                elif input_u[2] == 'l' or input_u[2] == 'low':
                     query_grade_lowestGPA(input_u[1])
                 else:
                     print("Invalid input")
@@ -70,13 +70,13 @@ def main():
                     continue
                 else:
                     query_grade(input_u[1])
-        elif input_u[0] == 'a':
+        elif input_u[0] == 'a' or input_u[0] == 'average':
             if len(input_u) < 2:
                     print("Invalid input")
                     continue
             else:
                 query_grade_averageGPA(input_u[1])
-        elif input_u[0] == 'i':
+        elif input_u[0] == 'i' or input_u[0] == 'info':
             query_info()
         else:
             print("Invalid input")
@@ -85,11 +85,11 @@ def main():
 #general functions
 def prompt():
     print("Available commands:")
-    print("• S[tudent]: <lastname> [B[us]]")
-    print("• T[eacher]: <lastname>")
-    print("• B[us]: <number>")
-    print("• G[rade]: <number> [H[igh]|L[ow]]")
-    print("• A[verage]: <number>")
+    print("• S[tudent] <lastname> [B[us]]")
+    print("• T[eacher] <lastname>")
+    print("• B[us] <number>")
+    print("• G[rade] <number> [H[igh]|L[ow]]")
+    print("• A[verage] <number>")
     print("• I[nfo]")
     print("• Q[uit]")
 
