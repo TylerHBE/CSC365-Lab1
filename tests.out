@@ -1,0 +1,130 @@
+thickers@unix1:~/365/CSC365-Lab1 $ python3 schoolsearch.py
+School Search Application
+Available commands:
+• S[tudent] <lastname> [B[us]]
+• T[eacher] <lastname>
+• B[us] <number>
+• G[rade] <number> [H[igh]|L[ow]]
+• A[verage] <number>
+• I[nfo]
+• Q[uit]
+Press Enter to run queries or type 'q' to quit: S HAVIR
+  HAVIR BOBBIE: Grade(2) Classroom(108) Teacher(HAMER GAVIN)
+Press Enter to run queries or type 'q' to quit: student nemo
+Press Enter to run queries or type 'q' to quit: s HAVIR b
+  HAVIR BOBBIE: Bus(0)
+Press Enter to run queries or type 'q' to quit: student cookus bus
+  COOKUS XUAN: Bus(52)
+Press Enter to run queries or type 'q' to quit: s cookus
+  COOKUS XUAN: Grade(3) Classroom(107) Teacher(FAFARD ROCIO)
+Press Enter to run queries or type 'q' to quit: t hamer
+  LIBRANDI TODD
+  HAVIR BOBBIE
+  SARAO DIEDRA
+  VANCOTT MIKE
+  WICINSKY TERESE
+  KOZOLA BUSTER
+  MULLINGS LEIGHANN
+  BUSSMANN BILLY
+  BERBES DICK
+  MULGREW RANDELL
+  TOWLEY LANE
+Press Enter to run queries or type 'q' to quit: Teacher FAFARD
+  COOKUS XUAN
+  ELHADDAD SHANTE
+  SWEDLUND SHARRI
+  CIGANEK MANIE
+  COVINGTON TOMAS
+  EARLY TORY
+  LINHART LELA
+Press Enter to run queries or type 'q' to quit: g 3
+  COOKUS XUAN
+  ELHADDAD SHANTE
+  BRODERSEN HYE
+  SWEDLUND SHARRI
+  CIGANEK MANIE
+  COVINGTON TOMAS
+  EARLY TORY
+  LINHART LELA
+  THEUNISSEN GRACE
+Press Enter to run queries or type 'q' to quit: GRADE 3
+  COOKUS XUAN
+  ELHADDAD SHANTE
+  BRODERSEN HYE
+  SWEDLUND SHARRI
+  CIGANEK MANIE
+  COVINGTON TOMAS
+  EARLY TORY
+  LINHART LELA
+  THEUNISSEN GRACE
+Press Enter to run queries or type 'q' to quit: B 0
+  SCHOENECKER PHUONG: Grade(6) Classroom(109)
+  FINCHMAN MATHILDA: Grade(6) Classroom(111)
+  BRODERSEN HYE: Grade(3) Classroom(110)
+  HAVIR BOBBIE: Grade(2) Classroom(108)
+  MASSART ELDON: Grade(4) Classroom(105)
+  GARTH JOHN: Grade(1) Classroom(103)
+  CREMEANS RANDOLPH: Grade(6) Classroom(109)
+  KREESE CARRIE: Grade(6) Classroom(109)
+Press Enter to run queries or type 'q' to quit: Bus 52
+  COOKUS XUAN: Grade(3) Classroom(107)
+  ELHADDAD SHANTE: Grade(3) Classroom(107)
+  IMMERMAN DEVIN: Grade(4) Classroom(105)
+  OBREIN STAN: Grade(6) Classroom(111)
+  CORONADO DIMPLE: Grade(6) Classroom(102)
+  SARAO DIEDRA: Grade(2) Classroom(108)
+  EARLY TORY: Grade(3) Classroom(107)
+  KEMERER ROSETTA: Grade(6) Classroom(102)
+Press Enter to run queries or type 'q' to quit: G 3 H
+  SWEDLUND SHARRI: GPA(3.24) Teacher(FAFARD ROCIO) Bus(55)
+Press Enter to run queries or type 'q' to quit: Grade 2 LOW
+  KOZOLA BUSTER: GPA(2.76) Teacher(HAMER GAVIN) Bus(55)
+Press Enter to run queries or type 'q' to quit: A 2
+  Grade 2 Average GPA: 2.95
+Press Enter to run queries or type 'q' to quit: average 3
+  Grade 3 Average GPA: 3.05
+Press Enter to run queries or type 'q' to quit: I
+  Grade 1: 2 students
+  Grade 2: 13 students
+  Grade 3: 9 students
+  Grade 4: 15 students
+  Grade 5: 0 students
+  Grade 6: 21 students
+Press Enter to run queries or type 'q' to quit: g 1
+  SAELEE DANILO
+  GARTH JOHN
+Press Enter to run queries or type 'q' to quit: info
+  Grade 1: 2 students
+  Grade 2: 13 students
+  Grade 3: 9 students
+  Grade 4: 15 students
+  Grade 5: 0 students
+  Grade 6: 21 students
+Press Enter to run queries or type 'q' to quit: quit
+thickers@unix1:~/365/CSC365-Lab1 $ python3 schoolsearch.py
+School Search Application
+Available commands:
+• S[tudent] <lastname> [B[us]]
+• T[eacher] <lastname>
+• B[us] <number>
+• G[rade] <number> [H[igh]|L[ow]]
+• A[verage] <number>
+• I[nfo]
+• Q[uit]
+Press Enter to run queries or type 'q' to quit: help
+Invalid input
+Press Enter to run queries or type 'q' to quit: teacer fafard
+Invalid input
+Press Enter to run queries or type 'q' to quit: q
+thickers@unix1:~/365/CSC365-Lab1 $ python3 schoolsearch.py
+School Search Application
+Available commands:
+• S[tudent] <lastname> [B[us]]
+• T[eacher] <lastname>
+• B[us] <number>
+• G[rade] <number> [H[igh]|L[ow]]
+• A[verage] <number>
+• I[nfo]
+• Q[uit]
+Press Enter to run queries or type 'q' to quit: s nemo
+Press Enter to run queries or type 'q' to quit: q
