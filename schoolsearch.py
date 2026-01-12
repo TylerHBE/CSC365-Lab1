@@ -76,7 +76,7 @@ def main():
             else:
                 query_grade_averageGPA(input_u[1])
         elif input_u[0] == 'i':
-            prompt()
+            query_info()
         else:
             print("Invalid input")
             continue
@@ -205,6 +205,11 @@ def query_grade_lowestGPA(grade_level):
     if min_index > 0:
         s = "  " + return_entry(min_index, s_last_name) + " " + return_entry(min_index, s_first_name) + ": GPA(" + return_entry(min_index, gpa) + ") Teacher(" + return_entry(min_index, t_last_name) + " " + return_entry(min_index, t_first_name) + ") Bus(" + return_entry(min_index, bus) + ")"
         print(s)
-    
+
+def query_info():
+    for grade_level in range(7):
+        indices = search(grade, grade_level)
+        print(f"  Grade {grade_level}: {len(indices)} students")
+
 #main entry point
 main()
