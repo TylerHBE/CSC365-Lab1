@@ -166,7 +166,7 @@ def query_grade(grade_level):
     results = []
     for index in indices:
         s = "  "
-        s += return_entry(index, s_last_name) + " " + return_entry(index, s_first_name) + ": GPA(" + return_entry(index, gpa) + ") Teacher(" + return_entry(index, t_last_name) + " " + return_entry(index, t_first_name) + ") Bus(" + return_entry(index, bus) + ")"
+        s += return_entry(index, s_last_name) + " " + return_entry(index, s_first_name)
         results.append(s)
     for result in results:
         print(result)
