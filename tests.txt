@@ -1,0 +1,191 @@
+// CSC 365
+// Lab 1-a test suite
+
+// TC-1
+// Tests Requirements R3, R4
+// short form command name, existing student
+// expected output:   HAVIR BOBBIE: Grade(2) Classroom(108) Teacher(HAMER GAVIN)
+S HAVIR
+
+// TC-2
+// Tests Requirements R3, R4
+// long form command name, non-existing student
+// expected output: <empty line>
+Student NEMO
+
+// TC-3
+// Tests Requirements R3, R5
+// short form command name, existing student
+// expected output:  HAVIR BOBBIE: Bus(0)
+s HAVIR b
+
+// TC-4
+// Tests Requirements R3, R5
+// long form command name, existing student
+// expected output:  COOKUS XUAN: Bus(52)
+student cookus bus
+
+// TC-5
+// Tests Requirements R3, R6
+// short form command name, existing student
+// expected output:
+//  LIBRANDI TODD
+//  HAVIR BOBBIE
+//  SARAO DIEDRA
+//  VANCOTT MIKE
+//  WICINSKY TERESE
+//  KOZOLA BUSTER
+//  MULLINGS LEIGHANN
+//  BUSSMANN BILLY
+//  BERBES DICK
+//  MULGREW RANDELL
+//  TOWLEY LANE
+t hamer
+
+// TC-6
+// Tests Requirements R3, R6
+// long form command name, existing student
+// expected output:
+//  COOKUS XUAN
+//  ELHADDAD SHANTE
+//  SWEDLUND SHARRI
+//  CIGANEK MANIE
+//  COVINGTON TOMAS
+//  EARLY TORY
+//  LINHART LELA
+Teacher FAFARD
+
+// TC-7
+// Tests Requirements R3, R7
+// short form command name, existing student
+// expected output:
+//  COOKUS XUAN
+//  ELHADDAD SHANTE
+//  BRODERSEN HYE
+//  SWEDLUND SHARRI
+//  CIGANEK MANIE
+//  COVINGTON TOMAS
+//  EARLY TORY
+//  LINHART LELA
+//  THEUNISSEN GRACE
+g 3
+
+// TC-8
+// Tests Requirements R3, R7
+// long form command name, existing student
+// expected output:
+//  COOKUS XUAN
+//  ELHADDAD SHANTE
+//  BRODERSEN HYE
+//  SWEDLUND SHARRI
+//  CIGANEK MANIE
+//  COVINGTON TOMAS
+//  EARLY TORY
+//  LINHART LELA
+//  THEUNISSEN GRACE
+GRADE 3
+
+// TC-9
+// Tests Requirements R3, R8
+// short form command name, existing student
+// expected output:
+//  SCHOENECKER PHUONG: Grade(6) Classroom(109)
+//  FINCHMAN MATHILDA: Grade(6) Classroom(111)
+//  BRODERSEN HYE: Grade(3) Classroom(110)
+//  HAVIR BOBBIE: Grade(2) Classroom(108)
+//  MASSART ELDON: Grade(4) Classroom(105)
+//  GARTH JOHN: Grade(1) Classroom(103)
+//  CREMEANS RANDOLPH: Grade(6) Classroom(109)
+//  KREESE CARRIE: Grade(6) Classroom(109)
+B 0
+
+// TC-10
+// Tests Requirements R3, R8
+// long form command name, existing student
+// expected output:
+//  COOKUS XUAN: Grade(3) Classroom(107)
+//  ELHADDAD SHANTE: Grade(3) Classroom(107)
+//  IMMERMAN DEVIN: Grade(4) Classroom(105)
+//  OBREIN STAN: Grade(6) Classroom(111)
+//  CORONADO DIMPLE: Grade(6) Classroom(102)
+//  SARAO DIEDRA: Grade(2) Classroom(108)
+//  EARLY TORY: Grade(3) Classroom(107)
+//  KEMERER ROSETTA: Grade(6) Classroom(102)
+Bus 52
+
+// TC-11
+// Tests Requirements R3, R9
+// short form command name, existing student
+// expected output:  SWEDLUND SHARRI: GPA(3.24) Teacher(FAFARD ROCIO) Bus(55)
+G 3 H
+
+// TC-12
+// Tests Requirements R3, R9
+// long form command name, existing student
+// expected output:  KOZOLA BUSTER: GPA(2.76) Teacher(HAMER GAVIN) Bus(55)
+Grade 2 LOW
+
+// TC-13
+// Tests Requirements R3, R10
+// short form command name, existing student
+// expected output:  Grade 2 Average GPA: 2.95
+A 2
+
+// TC-14
+// Tests Requirements R3, R10
+// long form command name, existing student
+// expected output:  Grade 3 Average GPA: 3.05
+average 3
+
+// TC-15
+// Tests Requirements R3, R11
+// short form command name, existing student
+// expected output:
+//  Grade 1: 2 students
+//  Grade 2: 13 students
+//  Grade 3: 9 students
+//  Grade 4: 15 students
+//  Grade 5: 0 students
+//  Grade 6: 21 students
+I
+
+// TC-16
+// Tests Requirements R3, R11
+// long form command name, existing student
+// expected output:
+//  Grade 1: 2 students
+//  Grade 2: 13 students
+//  Grade 3: 9 students
+//  Grade 4: 15 students
+//  Grade 5: 0 students
+//  Grade 6: 21 students
+Info
+
+// TC-17
+// Tests Requirements R3, R12
+// short form command name, existing student
+// expected output: program terminates
+Q
+
+// TC-18
+// Tests Requirements R3, R12
+// long form command name, existing student
+// expected output: program terminates
+quit
+
+// TC-19
+// Tests Requirements E1
+// non-existing command
+// expected output: Invalid input
+help
+
+// TC-19
+// Tests Requirements E1
+// incorrect command
+// expected output: Invalid input
+teacer fafard
+
+// TC-19
+// Tests Requirements E1
+// No students.txt file
+// expected output: Error: file 'students.txt' not found. *Program terminates*
