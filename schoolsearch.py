@@ -35,7 +35,7 @@ def main():
             continue_l = False
             break
         elif input_u[0] == 's' or input_u[0] == 'student':
-            if len(input_u) >= 3 and (input_u[2] == 'b'  or input_u[0] == 'bus'):
+            if len(input_u) >= 3 and (input_u[2] == 'b'  or input_u[2] == 'bus'):
                 query_lname_bus(input_u[1])
             else:
                 if len(input_u) < 2:
